@@ -14,6 +14,13 @@
             required="required"
             placeholder="Введите описание товара"
             />
+        <label class="label__name">Ссылка на изображение товара</label>
+        <input 
+            v-model="cart.image"
+            type=""
+            class="input"
+            required="required"
+            placeholder="Введите ссылку">
         <label class="label__name">Цена товара</label>
         <input 
             v-model="cart.price"
@@ -36,13 +43,14 @@ export default {
             cart: {
                 title: '',
                 body: '',
+                image: '',
                 price: ''
             },
         }
     },
     computed: {
         isComplete () {
-            return this.cart.title && this.cart.body && this.cart.price;
+            return this.cart.title && this.cart.body && this.cart.image && this.cart.price;
         },
     },
     methods: {
@@ -52,6 +60,7 @@ export default {
             this.cart = {
                 title: '',
                 body: '',
+                image: '',
                 price: '',
             }
         },
@@ -62,6 +71,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+    font-family: Source Sans Pro;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -70,6 +82,7 @@ form {
     background: #FFFEFB;
     box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
     border-radius: 4px;
+    margin-left: 32px;
 }
 .input {
   background: #FFFEFB;

@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+    font-family: Source Sans Pro;
+}
 .cart {
     display: flex;
     flex-direction: column;
@@ -34,9 +37,11 @@ export default {
 }
 .name {
     padding: 16px 16px 16px 16px;
+    word-break: break-all;
 }
 .about {
     padding: 16px 16px 32px 16px;
+    word-break: break-all;
 }
 .price {
     padding: 0 16px 24px 16px;
