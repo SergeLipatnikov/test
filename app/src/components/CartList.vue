@@ -1,5 +1,4 @@
 <template>
-
     <div class="cart" v-for="cart in carts" :key="cart.id" @remove="$emit('remove', cart)">
         <div class="image"><img src="../assets/log1.png"></div>
         <div class="name"><strong>{{cart.title}}</strong></div>
@@ -7,6 +6,7 @@
         <div class="price"><strong>{{cart.price}} руб.</strong></div>
         <button @click="$emit('remove', cart)" class="del"><img src="../assets/del.svg"></button>
     </div>
+    
 </template>
 
 <script>
@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+    font-family: Source Sans Pro;
+}
 .cart {
     display: flex;
     flex-direction: column;
@@ -34,9 +37,11 @@ export default {
 }
 .name {
     padding: 16px 16px 16px 16px;
+    word-break: break-all;
 }
 .about {
     padding: 16px 16px 32px 16px;
+    word-break: break-all;
 }
 .price {
     padding: 0 16px 24px 16px;
@@ -54,5 +59,18 @@ export default {
 .del:hover {
     display: inline-block;
     opacity: 1;
+}
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active,
+.list-leave-active {
+  transition: all 5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(80px);
 }
 </style>
