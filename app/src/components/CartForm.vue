@@ -17,7 +17,7 @@
         <label class="label__name">Ссылка на изображение товара</label>
         <input 
             v-model="cart.image"
-            type=""
+            type="url"
             class="input"
             required="required"
             placeholder="Введите ссылку">
